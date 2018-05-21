@@ -2,23 +2,23 @@ $(document).ready(function () {
 
     let gridWidth = $('#inputWidth').val();
     let gridHeight = $('#inputHeight').val();
-    let color = 'black';
+    let color = $('#submitColor').val();
     let submit = $('#submitInput');
     const canvas = $('#pixelCanvas');
 
-    //change the size of the grid to match inputs
-    $('#submitInput').click(function () {
-        gridWidth = $('#inputWidth').val();
-        return gridWidth;
+    submit.click(function (e) {
+        e.preventDefault();
     });
 
-    $('#submitInput').click(function () {
-        gridHeight = $('#inputHeight').val();
-        return gridHeight;
+    //update input color
+    $('#submitColor').change(function () {
+        color = $('#submitColor').val();
     });
 
-    $('#submitInput').click(
+    submit.click(
         function makeGrid() {
+            gridHeight = $('#inputHeight').val();
+            gridWidth = $('#inputWidth').val();
             let grid;
             let width = [];
             for (let w = 0; w < gridWidth; w++) {
@@ -31,16 +31,17 @@ $(document).ready(function () {
             draw();
         });
 
-    //update inputted color
-    $('#submitColor').change(function () {
-        color = $('#submitColor').val();
-    });
 
     function draw() {
-        $('.pixel').click(function changeColor(e) {
-            $(this).attr('style', `background-color: ${color}`);
-            //console.log($(this));
+        $('.pixel').click(function changeColor() {
+           $(this).css(`background-color`, `${color}`);
+        });
+
+        $('.pixel').dblclick(function changeColor() {
+            $(this).css(`background-color`, ``);
         });
     }
+
+
 
 });
