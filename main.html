@@ -7,30 +7,44 @@
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|VT323" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="designs.js"></script>
 </head>
 
 <body>
-    <h1>Lab: Pixel Art Maker</h1>
+    <div id="controlPanelWrapper">
+        <div id="controlPanel">
 
-    <h2>Edit the numbers below to change the width and height of the canvas!</h2>
-    <form id="sizeInput submit">
-        Grid Height:
-        <input type="number" id="inputHeight" value="20" min='1'>
-        Grid Width:
-        <input type="number" id="inputWidth" value="20" min='1'>
-        <input type="submit" id="submitInput" value="Submit">
-    </form>
+            <h1>Pixel Art Maker</h1>
 
-    <h2 id="colorPicker">Pick A Color</h2>
-    <input type="color" id="submitColor">
+            <h2>Edit the numbers below to change the width and height of the canvas</h2>
+            <form id="sizeInput">
+                <div>
+                    Canvas Height:<input type="number" id="inputHeight" value="35" min='1'>
+                </div>
+                <div>
+                    Canvas Width:<input type="number" id="inputWidth" value="50" min='1'>
+                </div>
+                <input type="submit" id="submitInput" value="Resize">
+            </form>
 
-    <h2>Design Canvas</h2>
+            Zoom:<input type="number" id="inputPixelSize" value="8" min='1' max='15'>
+            
+            <h2 id="colorPicker">Pick A Color</h2>
+            <input type="color" id="submitColor">
 
-    <table id='pixelCanvas'>
-        <tr class='row'></tr>
-    </table>
+            <button id="fillCanvas">Fill Canvas</button>
+            <button id="clearCanvas">Reset Canvas</button>
+        </div>
+        <button id="toggleControlPanel">></button>
 
+    </div>
+    
+    
+    <div id="canvasContainer">
+        <table id='pixelCanvas'>
+            <tr class='row'></tr>
+        </table>
+    </div>
+    <script src="designs.js"></script>
 </body>
 
 </html>
