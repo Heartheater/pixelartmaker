@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Pixel Art Maker!</title>
+    <title>Pixel Art Maker</title>
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|VT323" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -12,10 +12,7 @@
 <body>
     <div id="controlPanelWrapper">
         <div id="controlPanel">
-
             <h1>Pixel Art Maker</h1>
-
-            <h2>Edit the numbers below to change the width and height of the canvas</h2>
             <form id="sizeInput">
                 <div>
                     Canvas Height:<input type="number" id="inputHeight" value="35" min='1'>
@@ -23,16 +20,19 @@
                 <div>
                     Canvas Width:<input type="number" id="inputWidth" value="50" min='1'>
                 </div>
-                <input type="submit" id="submitInput" value="Resize">
+                <input type="submit" id="submitInput" class="button" value="Resize">
             </form>
-
             Zoom:<input type="number" id="inputPixelSize" value="8" min='1' max='15'>
-            
-            <h2 id="colorPicker">Pick A Color</h2>
-            <input type="color" id="submitColor">
 
-            <button id="fillCanvas">Fill Canvas</button>
-            <button id="clearCanvas">Reset Canvas</button>
+            <div id="colorPicker">
+                <h2>Pick A Color</h2>
+                <input type="color" id="submitColor">
+            </div>
+
+
+
+            <button id="fillCanvas" class="button">Fill Canvas</button>
+            <button id="clearCanvas" class="button">Reset Canvas</button>
         </div>
         <button id="toggleControlPanel">></button>
 
